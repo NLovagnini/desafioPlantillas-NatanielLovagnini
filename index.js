@@ -9,18 +9,17 @@ const routes = require('./routes.js')
 
 
 app.set('views', './views')
-// app.set('view engine', 'hbs' )
+app.set('view engine', 'hbs' )
 
-// app.engine('hbs', handlebars.engine({
-//     extname: '.hbs', 
-//     defaultLayout: 'index.hbs',
-//     layoutsDir: __dirname+'/views/layouts',
-//     partialsDir: __dirname+'/views/partials'
-// }))
+app.engine('hbs', handlebars.engine({
+    extname: '.hbs', 
+    defaultLayout: 'index.hbs',
+    layoutsDir: __dirname+'/views/layouts',
+    partialsDir: __dirname+'/views/partials'
+}))
 
-app.set('view engine', 'pug')
-
-
+// app.set('view engine', 'ejs')
+// app.set('view engine', 'pug')
 
 
 
