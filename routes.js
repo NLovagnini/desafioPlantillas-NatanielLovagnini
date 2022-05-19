@@ -27,17 +27,19 @@ router.get('/:id', (req, res) =>{
 })
 
 router.get('/', (req, res) =>{
-    res.render("main",{
+    res.render("showProducts",{
         products
     })
 })
 
-
 router.post('/', (req, res) =>{
     const newObj = req.body
     newObj.id = products.length+1
+    newObj.thumbnail = `/uploads/thumbnail-${newObj.title}.png`
     products.push(newObj)
-    res.json({newObj})
+    res.render('showProducts', {
+        products
+    })
 })
 
 router.put('/:id', (req, res) =>{
